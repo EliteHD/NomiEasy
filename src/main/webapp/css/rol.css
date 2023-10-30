@@ -1,0 +1,153 @@
+.table-container {
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+    overflow-x: auto; /* Hacer la tabla scrollable horizontalmente */
+}
+
+table {
+    border-collapse: collapse;
+    margin-top: 20px;
+    width: 100%;
+    table-layout: fixed; /* Fijar el ancho de las columnas */
+}
+
+th,
+td {
+    padding: 10px;
+
+    text-align: left;
+    font-size: 14px;
+    white-space: nowrap; /* Evitar que el contenido se rompa en múltiples líneas */
+    overflow: hidden;
+    text-overflow: ellipsis; /* Truncar el contenido que desborda */
+}
+
+th {
+    background-color: #f2f2f2;
+}
+
+.feedback-cell {
+    width: auto; /* Esto hará que el ancho se ajuste al contenido */
+    white-space: nowrap; /* Evita el salto de línea para que el contenido no se desborde */
+    overflow: hidden; /* Oculta el contenido que se desborde */
+    text-overflow: ellipsis; /* Agrega puntos suspensivos si el contenido se desborda */
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+/* Media query para pantallas más pequeñas */
+@media screen and (max-width: 768px) {
+    td {
+        font-size: 12px;
+    }
+
+    /* Restablecer el ancho de las columnas */
+    th,
+    td {
+        width: auto;
+    }
+
+    th {
+        display: none; /* Ocultar encabezados en pantallas pequeñas */
+    }
+
+    td::before {
+        content: attr(data-label); /* Mostrar etiquetas personalizadas en cada celda */
+        font-weight: bold;
+        display: block;
+        margin-bottom: 5px;
+    }
+}
+
+
+.btn-container {
+    display: flex;
+    justify-content: start;
+    margin-top: 20px;
+
+}
+
+.btn {
+    padding: 10px 20px;
+    border: none;
+    background-color: #007BFF;
+    color: #fff;
+
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+    text-decoration: none;
+}
+
+.btn.update {
+    background-color: rgb(46, 176, 38);
+}
+
+.btn.delete {
+    background-color: #DC3545;
+}
+
+@media screen and (max-width: 600px) {
+    .table-container {
+        padding: 10px;
+    }
+
+    .btn-container {
+        justify-content: center;
+    }
+
+    .btn.update, .btn.delete {
+        font-size: 10px;
+        padding: 5px 5px;
+    }
+
+}
+
+/* formulario para crear Rol */
+.form-container {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .form-container {
+        max-width: 100%;
+        padding: 10px;
+    }
+}
